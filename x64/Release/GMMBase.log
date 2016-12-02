@@ -1,0 +1,4 @@
+﻿  Algorithms.cpp
+  DataSet.cpp
+DataSet.cpp(18): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  GMMBase.vcxproj -> C:\Users\hzyereba\Desktop\I2Slice\I2Slice\x64\Release\GMMBase.lib
