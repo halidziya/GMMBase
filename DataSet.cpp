@@ -4,10 +4,9 @@
 
 using namespace std;
 int hypersample = 1;
-DataSet::DataSet(char* datafile, char* priorfile, char* configfile)
+DataSet::DataSet(char* datafile, char* priorfile, char* configfile,char* groupfile)
 {
 	Matrix conf;
-	Matrix labels;
 	data.readBin(datafile);
 	n = data.r;
 	d = data.m;
@@ -42,10 +41,12 @@ DataSet::DataSet(char* datafile, char* priorfile, char* configfile)
 	}
 	else
 	{
-		Psi = eye(d)*(m - d - 1);
+		Psi = eye(d)*(m - d - 1)*2;
 		mu0 = data.mean();
 	}
 
+	if (groupfile != NULL)
+		group.readBin(groupfile);
 }
 
 

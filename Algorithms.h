@@ -16,3 +16,8 @@ public:
 };
 
 Vector kmeans(Matrix& ds,int k);
+
+
+
+extern  int MAXCOMP;
+Vector stickBreaker(double ustar, double betastar = 1.0, double alpha = 1);
