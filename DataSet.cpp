@@ -7,7 +7,13 @@ int hypersample = 1;
 DataSet::DataSet(char* datafile, char* priorfile, char* configfile,char* groupfile)
 {
 	Matrix conf;
-	data.readBin(datafile);
+	if (fexists(datafile)) {
+		data.readBin(datafile);
+	}
+	else {
+		cout << "File not found : " << datafile << endl;
+		exit(1);
+	}
 	n = data.r;
 	d = data.m;
 

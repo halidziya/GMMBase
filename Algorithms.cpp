@@ -4,7 +4,7 @@
 Vector kmeans(Matrix& data,int k)
 {
 	//k = d;// thread::hardware_concurrency(); // Our matrices are square in buffer , to be implemented later, this is not limitation in main program 
-	Matrix means(k,d); // This need to be modified , But buffer size is fixed so I am exploting that
+	Matrix means(d,d); // This need to be modified , But buffer size is fixed so I am exploting that
 	Vector counts(d);
 	ThreadPool tpool(thread::hardware_concurrency());
 	vector<KmeansTask> ktasks;
@@ -53,7 +53,7 @@ void KmeansTask::run(int id)
 	double mindist, dist;
 	int d = data.m;
 	counts = Vector(k);
-	sums = Matrix(k,d);
+	sums = Matrix(d,d);
 	sums.zero();
 	counts.zero();
 	auto range = trange(n, nthd, threadid-1); // Threadids start from 1 
