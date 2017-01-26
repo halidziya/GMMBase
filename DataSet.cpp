@@ -16,7 +16,7 @@ DataSet::DataSet(int argc,char** argv)
 	}
 	n = data.r;
 	d = data.m;
-	
+	init_buffer(nthd, d);
 	if ((argc > 2) & fexists(argv[2]))
 	{
 		prior.readBin(argv[2]);
@@ -51,7 +51,7 @@ DataSet::DataSet(int argc,char** argv)
 		gam = 1;
 	}
 	
-	init_buffer(nthd, d);
+	
 
 	//if ((argc > 2) & fexists(argv[2]))
 		//group.readBin(groupfile);
