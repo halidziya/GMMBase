@@ -48,8 +48,8 @@ DataSet::DataSet(int argc,char** argv)
 	}
 	else
 	{
-		Psi = (eye(d)*(m - d - 1)).copy();
-		mu0 = data.mean().copy();
+		Psi = (eye(d)*(m - d - 1));
+		mu0 = data.mean();
 	}
 	
 
