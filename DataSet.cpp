@@ -16,6 +16,8 @@ DataSet::DataSet(int argc,char** argv)
 	}
 	n = data.r;
 	d = data.m;
+	if (nthd == 0)
+		nthd = thread::hardware_concurrency();
 	init_buffer(nthd, d);
 
 	if ((argc > 3) && fexists(argv[3]))
